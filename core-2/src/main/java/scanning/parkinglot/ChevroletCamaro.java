@@ -5,7 +5,7 @@ import scanning.parkinglot.Car;
 import scanning.parkinglot.Engine;
 
 public class ChevroletCamaro implements Car{
-    Engine engine;
+    private Engine engine;
 
     public void setEngine(Engine engine){
         this.engine = engine;
