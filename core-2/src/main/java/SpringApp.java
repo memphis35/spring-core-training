@@ -17,12 +17,8 @@ public class SpringApp {
         var context = new AnnotationConfigApplicationContext(ProjectConfig.class);
 
         //print all created bean names
-        String[] beanNames = context.getBeanDefinitionNames();
-
-        for (int i = 4; i<beanNames.length; i++) {
-            System.out.println(beanNames[i]);
-        }
-
+        context.getBeansOfType(parkinglot.Engine.class).forEach((bean, engine) -> System.out.println( bean));
+        context.getBeansOfType(parkinglot.Car.class).forEach((bean, car) -> System.out.println( bean));
 
     }
 }

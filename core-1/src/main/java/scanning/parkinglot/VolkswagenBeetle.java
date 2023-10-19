@@ -4,10 +4,8 @@ import org.springframework.stereotype.Component;
 
 import java.security.PublicKey;
 
-@Component
-public class VolkswagenBeetle implements parkinglot.Car {
-
-    private String name = "Bumblebee";
+@Component(value="Bumblebee")
+public class VolkswagenBeetle implements Car {
     private Engine engine;
 
     public VolkswagenBeetle(Engine engine){
@@ -16,7 +14,7 @@ public class VolkswagenBeetle implements parkinglot.Car {
     @Override
     public void startEngine() {
         engine.start();
-        System.out.println("Car: " + name + ", starts...");
+        System.out.println("Car starts...");
     }
 
 

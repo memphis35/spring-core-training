@@ -2,13 +2,11 @@ package scanning.parkinglot;
 
 import org.springframework.stereotype.Component;
 
-@Component
+@Component(value="oldSchoolStuff")
 public class FourCylinderEngine implements Engine {
-    private final String name = "oldSchoolStuff";
-
     @Override
     public void start() {
-        System.out.println("Engine: " + name + " starts...");
+        System.out.println("Engine starts...");
     }
 
 }
