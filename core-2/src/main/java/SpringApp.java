@@ -5,12 +5,20 @@
 // 3. Take all beans and print their names.
 // 3a. REQUIRED CONDITION - Use configuration class while loading the context
 
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.context.annotation.Bean;
+import org.springframework.stereotype.Component;
+import scanning.parkinglot.ProjectConfig;
+
 public class SpringApp {
 
     public static void main(String[] args) {
         // initiate application context there
+        var context = new AnnotationConfigApplicationContext(ProjectConfig.class);
 
         //print all created bean names
+        context.getBeansOfType(parkinglot.Engine.class).forEach((bean, engine) -> System.out.println( bean));
+        context.getBeansOfType(parkinglot.Car.class).forEach((bean, car) -> System.out.println( bean));
 
     }
 }
